@@ -9,8 +9,8 @@ Esta versão usa o EDGE como motor principal e o código está totalmente otimiz
 - Você precisa, antes de mais nada, possuir o Python 3 e o Selenium instalado.
 - Baixar o webdriver compativel com o seu browser em um dos links no fim do artigo.
 - Descompactar o driver na pasta da Judith.
+- Editar o arquivo tracking.txt com o código de rastreio de 13 digitos.
 - Abrir o Judith.Py
-- Inserir os códigos e apertar enter.
 - Visualizar o Consulta.png na pasta da Judith.
 
 
