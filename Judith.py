@@ -21,8 +21,14 @@ from selenium.webdriver.common.keys import Keys
 #path is setted to edgedriver in this case, 
 #you'll gonna need to download the apropriate version to your browser tho
 #its not difficult to implement to another browser, just change the driver
+
 #and the correct appointment in the driver section to "webriver.Yourcorrectbrowser.exe"
 PATH = "..\\Judith\\msedgedriver.exe"
+
+#read the tracking code(s) from the tracking txt file
+#you can put up various tracking numbers, but dont forget to separate them with commas.
+TRACKING = open('..\\Judith\\tracking.txt', 'r')
+CODE = TRACKING.read()
 
 #the correios website
 SITE = "https://www2.correios.com.br/sistemas/rastreamento/default.cfm"
@@ -45,8 +51,8 @@ title = """
 
 print(title)
 #the 13 digits tracking number
-print("Insira o código de 13 digitos: ")
-FUCKING_NUMBER = input(">> ")
+print("Lendo o(s) códigos de rastreio.")
+print("Código(s) >> ", CODE)
 print("Procurando...")
 
 driver = webdriver.Edge(PATH)
@@ -57,7 +63,7 @@ element = driver.find_element_by_name("objetos")
 element.clear()
 
 #insert the apropriate tracking code and then proceeds to the next page
-element.send_keys(FUCKING_NUMBER)
+element.send_keys(CODE)
 element.send_keys(Keys.RETURN)
 
 #save a screenshot of the tracking progress bc im lazy right now to implement a callback terminal function
